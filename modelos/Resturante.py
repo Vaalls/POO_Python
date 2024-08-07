@@ -14,8 +14,11 @@ class Restaurante:
         Restaurante.restaurantes.append(self)
 
     def __str__(self):
-        return f'{self._nome} | {self._categoria}'
+        return f'{self._nome} | {self._categoria} '
 
+    @property
+    def nome(self):
+        return self._nome
     @classmethod
     def listar_restaurantes(self):
         print(f'{"Nome do restaurante".ljust(20)} | {"Categoria".ljust(20)} | '
