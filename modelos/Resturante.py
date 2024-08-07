@@ -1,3 +1,5 @@
+from cardapio.ItemCardapio import ItemCardapio
+from modelos.Avaliacao import Avaliacao
 from modelos.Cliente import Cliente
 
 
@@ -42,3 +44,7 @@ class Restaurante:
         qtd_nota = len(self._avaliacao)
         media = round(soma_notas / qtd_nota, 1)
         return media
+
+    def adicionar_item(self,item):
+        if isinstance(item,ItemCardapio):
+            self._cardapio.append(item)
