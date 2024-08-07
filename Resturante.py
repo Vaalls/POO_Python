@@ -1,3 +1,6 @@
+from Cliente import Cliente
+
+
 class Restaurante:
     restaurantes = []
     def __init__(self, nome:str, categoria:str):
@@ -22,3 +25,11 @@ class Restaurante:
     @property
     def ativo(self):
         return '✅' if self._ativo else '❎'
+
+    def alternar_estado(self):
+        self._ativo = not self._ativo
+
+    def receber_avaliacao(self, cliente: Cliente, nota):
+        if 0 < nota <= 5:
+            avaliacao = Avaliacao(cliente, nota)
+            self._avaliacao.append(avaliacao)
