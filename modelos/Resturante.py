@@ -1,4 +1,4 @@
-from Cliente import Cliente
+from modelos.Cliente import Cliente
 
 
 class Restaurante:
