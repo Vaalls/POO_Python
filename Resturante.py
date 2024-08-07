@@ -7,3 +7,6 @@ class Restaurante:
         self._avaliacao = []
         self._cardapio = []
         Restaurante.restaurantes.append(self)
+
+    def __str__(self):
+        return f'{self._nome} | {self._categoria}'
