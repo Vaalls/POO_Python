@@ -18,3 +18,7 @@ class Restaurante:
         for restaurant in Restaurante.restaurantes:
             print(f'{restaurant._nome.ljust(20)} | {restaurant.categoria.ljust(20)} | '
                   f'{str(restaurant.media_avaliacoes).ljust(20)} | {restaurant.ativo}')
+
+    @property
+    def ativo(self):
+        return '✅' if self._ativo else '❎'
