@@ -34,7 +34,7 @@ class Restaurante:
     def alternar_estado(self):
         self._ativo = not self._ativo
 
-    def receber_avaliacao(self, cliente: Cliente, nota):
+    def receber_avaliacao(self, cliente: Cliente, nota: Avaliacao):
         if 0 < nota <= 5:
             avaliacao = Avaliacao(cliente, nota)
             self._avaliacao.append(avaliacao)
@@ -56,5 +56,5 @@ class Restaurante:
     def exibir_cardapio(self):
         print(f"Cardapio do Restaurante {self._nome}\n")
         for i, item in enumerate(self._cardapio, start=1):
-            mensagem = f"{i}. Nome: {item._nome} | Preço: R${item._preco}"
+            mensagem = f"{i}. Nome: {item._nome} | Preço: R${item._preco:.2f}"
             print(mensagem)
